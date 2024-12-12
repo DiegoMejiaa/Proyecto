@@ -1,28 +1,56 @@
 # gRPC Chess
+
 ## Descripción
-gRPC Chess es un proyecto que permite realizar consultas sobre partidas de ajedrez en línea utilizando la tecnología gRPC. Este sistema ofrece un backend eficiente desarrollado en Go, proporcionando acceso a datos detallados de partidas jugadas en plataformas online. Utilizando Microsoft Azure para la infraestructura, Docker para la contenedorización y Postman para las pruebas, el sistema ofrece un análisis rápido y preciso de las partidas de ajedrez.
+**gRPC Chess** es un proyecto que permite realizar consultas sobre partidas de ajedrez en línea utilizando la tecnología gRPC. Este sistema ofrece un backend eficiente desarrollado en Go, proporcionando acceso a datos detallados de partidas jugadas en plataformas online. Utilizando Microsoft Azure para la infraestructura, Docker para la contenedorización y Postman para las pruebas, el sistema ofrece un análisis rápido y preciso de las partidas de ajedrez.
 
-# Tecnologías Utilizadas
-Lenguaje de Programación: Go
+## Funcionalidad
+El proyecto gRPC Chess permite:
+- Consultar el nombre del usuario.
+- Consultar el tipo de victoria.
+- Consultar el color que usó el jugador.
 
-Infraestructura: Microsoft Azure
+## Tecnologías Utilizadas
+- **Lenguaje de Programación**: Go
+- **Infraestructura**: Microsoft Azure
+- **Contenedorización**: Docker
+- **Pruebas**: Postman
 
-Contenedorización: Docker
+## Cómo Ejecutarlo Localmente
 
-Pruebas: Postman
+### Prerrequisitos
+- Docker instalado en tu máquina.
+- Go instalado en tu máquina.
 
-## Características
-Acceso a datos detallados de partidas de ajedrez en línea.
+### Instrucciones
+1. Clona el repositorio:
+    ```sh
+    git clone https://github.com/DiegoMejiaa/Proyecto.git
+    cd Proyecto
+    ```
+2. Construye y ejecuta el contenedor Docker:
+    ```sh
+    docker build -t grpc-chess .
+    docker run -p 8080:8080 grpc-chess
+    ```
+3. Accede al servicio en `http://localhost:8080` y utiliza los endpoints gRPC.
 
-Análisis rápido y preciso de las partidas.
+## Cómo Interactuar con el Servicio en Azure
+El servicio está desplegado en Microsoft Azure y se puede acceder mediante la siguiente URL:
+- [Servicio en Azure](https://grcpchess.azurewebsites.net/)
 
-Backend eficiente utilizando gRPC.
+Para interactuar con el servicio:
+1. Abre Postman o cualquier cliente gRPC de tu elección.
+2. Configura una nueva solicitud gRPC apuntando a `https://grcpchess.azurewebsites.net/`.
+3. Utiliza los métodos proporcionados para realizar las consultas necesarias.
 
-Facilita el estudio y la revisión de juegos históricos.
+## Entrada en Tu Portafolio
 
-Base sólida para implementar funcionalidades avanzadas de análisis y visualización de datos.
+### Enlaces Importantes
+- **Repositorio del Proyecto**: [https://github.com/DiegoMejiaa/Proyecto](https://github.com/DiegoMejiaa/Proyecto)
+- **Servicio en Azure**: [https://grcpchess.azurewebsites.net/](https://grcpchess.azurewebsites.net/)
 
-## Uso
-Utiliza los endpoints gRPC para realizar consultas sobre partidas de ajedrez.
+### Enlace para Descargar el Archivo .proto
+- **Descargar archivo .proto**: [https://grcpchess.azurewebsites.net/proto/juegos.proto](https://grcpchess.azurewebsites.net/proto/juegos.proto)
 
-Analiza los datos de las partidas para mejorar estrategias.
+
+
