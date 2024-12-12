@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package juegos;
+
+option go_package = "juegos_grcp/proto;juegos";
+
+service JuegosService {
+  rpc GetJuegosInfo (JuegosRequest) returns (JuegosResponse);
+  rpc GetJuegosList (Empty) returns (stream  JuegosResponse);
+  rpc AddJuegos (stream NewJuegosRequest) returns (AddJuegosResponse);
+  rpc GetJuegosByWin (stream JuegosWinRequest) returns (stream JuegosResponse);
+}
+
+message JuegosRequest {
+  string name = 1;
+}
+
+message JuegosResponse {
+  string name = 1;
+  string win = 2;
+  string color = 3;
+}
+
+message NewJuegosRequest {
+  string name = 1;
+  string win = 2;
+  string color = 3;
+}
+message AddJuegosResponse {
+  int32 count = 1;
+
+}
+
+message Empty {}
+
+message JuegosWinRequest {
+  string win = 1;
+}

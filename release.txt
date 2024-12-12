@@ -1,0 +1,12 @@
+docker build -t grpc-juego-server:latest
+
+docker run -d -p 50051:50051 -p 8080:8080 --name grpc-juego-server grpc-juego-server:latest
+
+az login 
+az acr login --name chesscr
+
+docker tag grpc-juego-server:latest chesscr.azurecr.io/grpc-juego-server:latest
+docker tag grpc-juego-server:latest chesscr.azurecr.io/grpc-juego-server:0.0.1
+
+docker push chesscr.azurecr.io/grpc-juego-server:latest
+docker push chesscr.azurecr.io/grpc-juego-server:0.0.1
