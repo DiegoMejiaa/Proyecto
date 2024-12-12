@@ -57,7 +57,7 @@ El servicio incluye las siguientes funcionalidades:
 ## Interacción con el servicio en Azure
 
 1. **Despliegue en Azure**:
-   - Usa un servicio como Azure Kubernetes Service (AKS) o Azure Container Instances para alojar el contenedor.
+   - Usa un servicio como Azure Container Instances para alojar el contenedor.
    - Configura las variables de entorno necesarias en el servicio.
 
 2. **Acceso al servicio**:
@@ -67,7 +67,7 @@ El servicio incluye las siguientes funcionalidades:
      - Usa el archivo `.proto` para generar las definiciones de los métodos.
 
 3. **Verificación del servicio de salud**:
-   - Endpoint: `http://<azure_endpoint>:8080/health`
+   - Endpoint: `(<https://grcpchess.azurewebsites.net/)>:8080/health`
 
 ---
 
